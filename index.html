@@ -22,7 +22,6 @@
     pointer-events:none;z-index:0;
   }
 
-  /* HEADER */
   header{
     position:relative;z-index:10;
     display:flex;align-items:center;justify-content:space-between;
@@ -56,11 +55,9 @@
   }
   .btn-logout:hover{border-color:var(--red);color:var(--red);}
 
-  /* SCREENS */
   .screen{position:relative;z-index:5;display:none;min-height:calc(100vh - 73px);align-items:center;justify-content:center;padding:40px 20px;}
   .screen.active{display:flex;}
 
-  /* LOGIN */
   #login-screen{flex-direction:column;}
   .login-box{
     background:var(--surface);border:1px solid var(--border);
@@ -99,7 +96,6 @@
   .btn-primary:hover{background:var(--red-dark);}
   .btn-primary:hover::after{left:100%;}
 
-  /* GEN SCREEN */
   #gen-screen{flex-direction:column;align-items:center;justify-content:flex-start;padding-top:48px;gap:24px;}
   .gen-header{text-align:center;animation:slide-up .4s ease;}
   .gen-title{
@@ -109,34 +105,24 @@
   }
   .gen-sub{color:var(--muted);font-size:13px;letter-spacing:3px;text-transform:uppercase;margin-top:6px;}
 
-  /* STATS */
   .stats-bar{width:100%;max-width:780px;display:flex;gap:14px;animation:slide-up .5s ease .1s both;}
   .stat-card{flex:1;background:var(--surface);border:1px solid var(--border);padding:15px 20px;text-align:center;border-radius:4px;}
   .stat-num{font-family:'Bebas Neue',sans-serif;font-size:36px;line-height:1;}
-  .stat-num.gold{color:var(--gold);}  .stat-num.red{color:var(--red);}
+  .stat-num.gold{color:var(--gold);} .stat-num.red{color:var(--red);}
   .stat-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:4px;}
   hr.divider{width:100%;max-width:780px;border:none;border-top:1px solid var(--border);}
 
-  /* ADMIN WRAP */
   .admin-wrap{width:100%;max-width:780px;animation:slide-up .5s ease .15s both;}
-
-  /* TABS */
   .tab-bar{display:flex;border-bottom:1px solid var(--border);}
   .tab-btn{
     background:none;border:none;border-bottom:3px solid transparent;
-    color:var(--muted);padding:12px 26px;cursor:pointer;
-    font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:3px;
+    color:var(--muted);padding:12px 22px;cursor:pointer;
+    font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:3px;
     transition:all .2s;margin-bottom:-1px;
   }
   .tab-btn:hover{color:var(--text);}
   .tab-btn.active{color:var(--gold);border-bottom-color:var(--gold);}
-
-  /* PANELS — hidden by default, shown via JS */
-  .tab-panel{
-    background:var(--surface);border:1px solid var(--border);border-top:none;
-    padding:28px 32px;border-radius:0 0 4px 4px;
-  }
-
+  .tab-panel{background:var(--surface);border:1px solid var(--border);border-top:none;padding:28px 32px;border-radius:0 0 4px 4px;}
   .panel-title{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:3px;color:var(--gold);margin-bottom:18px;}
 
   .input-row{display:flex;gap:12px;margin-bottom:14px;}
@@ -155,7 +141,7 @@
   }
   .btn-add:hover{background:#ffd700;}
 
-  .scroll-list{display:flex;flex-direction:column;gap:8px;max-height:220px;overflow-y:auto;}
+  .scroll-list{display:flex;flex-direction:column;gap:8px;max-height:240px;overflow-y:auto;}
   .scroll-list::-webkit-scrollbar{width:4px;}
   .scroll-list::-webkit-scrollbar-track{background:var(--bg);}
   .scroll-list::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px;}
@@ -165,19 +151,33 @@
     background:var(--bg);border:1px solid var(--border);
     padding:10px 16px;border-radius:3px;animation:fade-in .2s ease;
   }
+  .list-item.warning{border-color:rgba(255,180,0,.4);background:rgba(255,180,0,.04);}
   @keyframes fade-in{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}
   .item-main{font-family:'Courier New',monospace;font-size:14px;font-weight:700;letter-spacing:2px;color:var(--gold);}
   .item-main.normal{font-family:'Rajdhani',sans-serif;font-size:15px;letter-spacing:1px;color:var(--text);}
   .item-sub{font-size:12px;color:var(--muted);margin-top:2px;letter-spacing:1px;}
 
-  .badge{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:3px 10px;border-radius:2px;}
+  .badge{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:3px 10px;border-radius:2px;white-space:nowrap;}
   .badge.available{background:rgba(0,200,100,.1);color:#0c6;border:1px solid rgba(0,200,100,.2);}
   .badge.used{background:rgba(255,100,100,.1);color:#f66;border:1px solid rgba(255,100,100,.2);}
   .badge.member{background:rgba(232,0,30,.1);color:#ff6680;border:1px solid rgba(232,0,30,.2);}
+  .badge.warn{background:rgba(255,180,0,.15);color:#ffb400;border:1px solid rgba(255,180,0,.3);}
+  .badge.ok{background:rgba(0,200,100,.1);color:#0c6;border:1px solid rgba(0,200,100,.2);}
 
   .btn-del{background:none;border:1px solid transparent;color:var(--muted);cursor:pointer;font-size:15px;padding:2px 8px;transition:all .2s;border-radius:3px;}
   .btn-del:hover{color:var(--red);border-color:var(--red);}
   .empty{text-align:center;color:var(--muted);font-size:13px;letter-spacing:1px;padding:18px;font-style:italic;}
+
+  /* IP LOG */
+  .ip-entry{
+    display:flex;align-items:flex-start;justify-content:space-between;
+    background:var(--bg);border:1px solid var(--border);
+    padding:10px 16px;border-radius:3px;gap:12px;
+  }
+  .ip-entry.multi{border-color:rgba(255,180,0,.4);background:rgba(255,180,0,.04);}
+  .ip-addr{font-family:'Courier New',monospace;font-size:13px;font-weight:700;color:#7df;letter-spacing:1px;}
+  .ip-time{font-size:11px;color:var(--muted);margin-top:3px;letter-spacing:1px;}
+  .ip-user{font-size:12px;color:var(--gold);font-weight:700;letter-spacing:1px;}
 
   /* GEN BOX */
   .gen-box{
@@ -192,22 +192,15 @@
   }
   .gta-logo{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:5px;color:var(--red);}
   .gta-sub{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--muted);text-transform:uppercase;}
-
   .key-display{
     background:var(--bg);border:1px solid var(--border);
     padding:24px 32px;margin-bottom:24px;
     position:relative;min-height:82px;
     display:flex;align-items:center;justify-content:center;border-radius:4px;
   }
-  .key-display::before{
-    content:"CLÉ D'ACTIVATION GTA V";
-    position:absolute;top:-10px;left:20px;
-    background:var(--bg);padding:0 10px;
-    font-size:10px;font-weight:700;letter-spacing:2px;color:var(--muted);
-  }
+  .key-display::before{content:"CLÉ D'ACTIVATION GTA V";position:absolute;top:-10px;left:20px;background:var(--bg);padding:0 10px;font-size:10px;font-weight:700;letter-spacing:2px;color:var(--muted);}
   .key-value{font-family:'Courier New',monospace;font-size:26px;font-weight:700;letter-spacing:6px;color:var(--gold);text-shadow:0 0 20px rgba(245,197,24,.3);word-break:break-all;}
   .key-placeholder{color:#333;font-size:14px;letter-spacing:2px;}
-
   .btn-row{display:flex;gap:12px;justify-content:center;}
   .btn-generate{
     background:var(--red);border:none;color:#fff;padding:14px 36px;
@@ -218,20 +211,9 @@
   .btn-generate:hover::after{left:100%;}
   .btn-generate:hover{background:#c0001a;transform:translateY(-1px);}
   .btn-generate:disabled{background:#333;cursor:not-allowed;transform:none;}
-
-  .btn-copy{
-    background:var(--surface2);border:1px solid var(--border);color:var(--text);
-    padding:14px 24px;font-family:'Bebas Neue',sans-serif;
-    font-size:18px;letter-spacing:3px;cursor:pointer;transition:all .2s;border-radius:3px;display:none;
-  }
+  .btn-copy{background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:14px 24px;font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:3px;cursor:pointer;transition:all .2s;border-radius:3px;display:none;}
   .btn-copy:hover{border-color:var(--gold);color:var(--gold);}
-
-  .copy-toast{
-    position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(20px);
-    background:#0a9;color:#fff;padding:12px 28px;
-    font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:3px;
-    border-radius:4px;opacity:0;transition:all .3s;pointer-events:none;z-index:999;
-  }
+  .copy-toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(20px);background:#0a9;color:#fff;padding:12px 28px;font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:3px;border-radius:4px;opacity:0;transition:all .3s;pointer-events:none;z-index:999;}
   .copy-toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 
   @media(max-width:600px){
@@ -262,7 +244,6 @@
   </div>
 </header>
 
-<!-- LOGIN -->
 <div class="screen active" id="login-screen">
   <div class="login-box">
     <div class="login-title">ACCÈS REQUIS</div>
@@ -282,9 +263,7 @@
   </div>
 </div>
 
-<!-- GENERATOR -->
 <div class="screen" id="gen-screen">
-
   <div class="gen-header">
     <div class="gen-title">KEY GENERATOR</div>
     <div class="gen-sub">Grand Theft Auto V · Activation Center</div>
@@ -298,10 +277,8 @@
 
   <hr class="divider">
 
-  <!-- ADMIN PANEL -->
   <div class="admin-wrap" id="adminWrap"></div>
 
-  <!-- GEN BOX -->
   <div class="gen-box">
     <div class="gta-badge">
       <div class="gta-logo">GTA V</div>
@@ -316,7 +293,6 @@
       <button class="btn-copy" id="copyBtn" onclick="copyKey()">COPIER</button>
     </div>
   </div>
-
 </div>
 
 <div class="copy-toast" id="toast">✓ CLÉ COPIÉE</div>
@@ -324,23 +300,41 @@
 <script>
   let keys    = JSON.parse(localStorage.getItem('rs_keys')    || '[]');
   let members = JSON.parse(localStorage.getItem('rs_members') || '[]');
+  // logs: [{ ident, ip, time }]
+  let logs    = JSON.parse(localStorage.getItem('rs_logs')    || '[]');
+
   let currentUser = null;
   let currentRole = null;
   let currentTab  = 'keys';
 
+  // ─── GET IP ───
+  async function getIP() {
+    try {
+      const r = await fetch('https://api.ipify.org?format=json');
+      const d = await r.json();
+      return d.ip;
+    } catch { return 'Inconnue'; }
+  }
+
   // ─── LOGIN ───
-  function doLogin() {
+  async function doLogin() {
     const u = document.getElementById('loginUser').value.trim();
     const p = document.getElementById('loginPass').value;
     let role = null;
-    if (u === 'admin' && p === 'admin') {
-      role = 'admin';
-    } else if (members.find(m => m.ident === u && m.pass === p)) {
-      role = 'user';
-    }
+    if (u === 'admin' && p === 'admin') role = 'admin';
+    else if (members.find(m => m.ident === u && m.pass === p)) role = 'user';
+
     if (role) {
       currentUser = u; currentRole = role;
       document.getElementById('errMsg').style.display = 'none';
+
+      // Log IP
+      const ip = await getIP();
+      logs.push({ ident: u, ip, time: new Date().toLocaleString('fr-FR') });
+      // Garder max 200 logs
+      if (logs.length > 200) logs = logs.slice(-200);
+      localStorage.setItem('rs_logs', JSON.stringify(logs));
+
       document.getElementById('login-screen').classList.remove('active');
       document.getElementById('gen-screen').classList.add('active');
       document.getElementById('userBadge').style.display = 'flex';
@@ -372,111 +366,99 @@
     resetKeyDisplay();
   }
 
-  // ─── BUILD ADMIN PANEL ───
-  function buildAdminPanel() {
-    currentTab = 'keys';
-    renderAdminHTML();
-  }
+  // ─── ADMIN PANEL ───
+  function buildAdminPanel() { currentTab = 'keys'; renderAdminHTML(); }
 
   function renderAdminHTML() {
-    const wrap = document.getElementById('adminWrap');
-    wrap.innerHTML = `
+    document.getElementById('adminWrap').innerHTML = `
       <div class="tab-bar">
-        <button class="tab-btn ${currentTab==='keys'?'active':''}" onclick="switchTab('keys')">CLÉS GTA V</button>
+        <button class="tab-btn ${currentTab==='keys'?'active':''}"    onclick="switchTab('keys')">CLÉS GTA V</button>
         <button class="tab-btn ${currentTab==='members'?'active':''}" onclick="switchTab('members')">COMPTES MEMBRES</button>
+        <button class="tab-btn ${currentTab==='logs'?'active':''}"    onclick="switchTab('logs')">JOURNAL IP</button>
       </div>
       <div class="tab-panel">
-        ${currentTab === 'keys' ? renderKeysTab() : renderMembersTab()}
-      </div>
-    `;
+        ${ currentTab==='keys' ? renderKeysTab() : currentTab==='members' ? renderMembersTab() : renderLogsTab() }
+      </div>`;
   }
 
-  function switchTab(tab) {
-    currentTab = tab;
-    renderAdminHTML();
-  }
+  function switchTab(tab) { currentTab = tab; renderAdminHTML(); }
 
   // ─── KEYS TAB ───
   function renderKeysTab() {
     const items = keys.length
-      ? keys.map((k,i) => `
-          <div class="list-item">
-            <div class="item-main">${k.code}</div>
-            <div style="display:flex;align-items:center;gap:10px">
-              <div class="badge ${k.status}">${k.status==='available'?'DISPONIBLE':'UTILISÉE'}</div>
-              <button class="btn-del" onclick="deleteKey(${i})">✕</button>
-            </div>
-          </div>`).join('')
+      ? keys.map((k,i)=>`
+        <div class="list-item">
+          <div class="item-main">${k.code}</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div class="badge ${k.status}">${k.status==='available'?'DISPONIBLE':'UTILISÉE'}</div>
+            <button class="btn-del" onclick="deleteKey(${i})">✕</button>
+          </div>
+        </div>`).join('')
       : '<div class="empty">Aucune clé enregistrée.</div>';
-
     return `
       <div class="panel-title">Ajouter une clé GTA V</div>
       <div class="input-row">
-        <input type="text" id="newKeyInput" class="mono"
-          placeholder="Ex : XXXX-XXXX-XXXX-XXXX" maxlength="80"
-          onkeydown="if(event.key==='Enter')addKey()">
+        <input type="text" id="newKeyInput" class="mono" placeholder="Ex : XXXX-XXXX-XXXX-XXXX" maxlength="80" onkeydown="if(event.key==='Enter')addKey()">
         <button class="btn-add" onclick="addKey()">+ AJOUTER</button>
       </div>
-      <div class="scroll-list">${items}</div>
-    `;
+      <div class="scroll-list">${items}</div>`;
   }
 
   function addKey() {
     const input = document.getElementById('newKeyInput');
     const val = input.value.trim().toUpperCase();
     if (!val) return;
-    if (keys.find(k => k.code === val)) { alert('Cette clé existe déjà.'); return; }
+    if (keys.find(k=>k.code===val)) { alert('Cette clé existe déjà.'); return; }
     keys.push({ code: val, status: 'available' });
     localStorage.setItem('rs_keys', JSON.stringify(keys));
-    updateStats();
-    renderAdminHTML();
-    // re-focus
-    setTimeout(() => { const el = document.getElementById('newKeyInput'); if(el) el.focus(); }, 50);
+    updateStats(); renderAdminHTML();
+    setTimeout(()=>{ const el=document.getElementById('newKeyInput'); if(el) el.focus(); },50);
   }
 
   function deleteKey(idx) {
     if (!confirm('Supprimer cette clé ?')) return;
-    keys.splice(idx, 1);
+    keys.splice(idx,1);
     localStorage.setItem('rs_keys', JSON.stringify(keys));
-    updateStats();
-    renderAdminHTML();
+    updateStats(); renderAdminHTML();
   }
 
   // ─── MEMBERS TAB ───
   function renderMembersTab() {
     const items = members.length
-      ? members.map((m,i) => `
-          <div class="list-item">
+      ? members.map((m,i) => {
+          // Compter les IP uniques pour ce membre
+          const memberLogs = logs.filter(l => l.ident === m.ident);
+          const uniqueIPs  = [...new Set(memberLogs.map(l => l.ip))];
+          const multi      = uniqueIPs.length > 1;
+          return `
+          <div class="list-item ${multi?'warning':''}">
             <div>
               <div class="item-main normal">${m.ident}</div>
-              <div class="item-sub">Mot de passe : ${m.pass}</div>
+              <div class="item-sub">Mot de passe : ${m.pass} &nbsp;·&nbsp; ${uniqueIPs.length} IP unique${uniqueIPs.length>1?'s':''} · ${memberLogs.length} connexion${memberLogs.length>1?'s':''}</div>
             </div>
             <div style="display:flex;align-items:center;gap:10px">
-              <div class="badge member">MEMBRE</div>
+              ${multi ? '<div class="badge warn">⚠ MULTI-IP</div>' : '<div class="badge ok">OK</div>'}
               <button class="btn-del" onclick="deleteMember(${i})">✕</button>
             </div>
-          </div>`).join('')
+          </div>`;
+        }).join('')
       : '<div class="empty">Aucun compte membre créé.</div>';
-
     return `
       <div class="panel-title">Créer un compte membre</div>
       <div class="input-row">
-        <input type="text" id="newUserIdent" placeholder="Identifiant" autocomplete="off"
-          onkeydown="if(event.key==='Enter')document.getElementById('newUserPass').focus()">
-        <input type="text" id="newUserPass" placeholder="Mot de passe" autocomplete="off"
-          onkeydown="if(event.key==='Enter')addMember()">
+        <input type="text" id="newUserIdent" placeholder="Identifiant" autocomplete="off" onkeydown="if(event.key==='Enter')document.getElementById('newUserPass').focus()">
+        <input type="text" id="newUserPass"  placeholder="Mot de passe" autocomplete="off" onkeydown="if(event.key==='Enter')addMember()">
         <button class="btn-add" onclick="addMember()">+ CRÉER</button>
       </div>
-      <div class="scroll-list">${items}</div>
-    `;
+      <div class="scroll-list">${items}</div>`;
   }
 
   function addMember() {
     const ident = document.getElementById('newUserIdent').value.trim();
     const pass  = document.getElementById('newUserPass').value.trim();
-    if (!ident || !pass) { alert('Remplis l\'identifiant et le mot de passe.'); return; }
-    if (ident === 'admin') { alert('Ce nom est réservé.'); return; }
-    if (members.find(m => m.ident === ident)) { alert('Cet identifiant existe déjà.'); return; }
+    if (!ident||!pass) { alert('Remplis l\'identifiant et le mot de passe.'); return; }
+    if (ident==='admin') { alert('Ce nom est réservé.'); return; }
+    if (members.find(m=>m.ident===ident)) { alert('Cet identifiant existe déjà.'); return; }
     members.push({ ident, pass });
     localStorage.setItem('rs_members', JSON.stringify(members));
     renderAdminHTML();
@@ -484,15 +466,64 @@
 
   function deleteMember(idx) {
     if (!confirm('Supprimer ce compte ?')) return;
-    members.splice(idx, 1);
+    members.splice(idx,1);
     localStorage.setItem('rs_members', JSON.stringify(members));
+    renderAdminHTML();
+  }
+
+  // ─── LOGS TAB ───
+  function renderLogsTab() {
+    if (!logs.length) return `<div class="panel-title">Journal des connexions</div><div class="empty">Aucune connexion enregistrée.</div>`;
+
+    // Grouper par compte, afficher les plus récents en premier
+    const reversed = [...logs].reverse();
+
+    // Détecter les comptes avec plusieurs IP
+    const ipMap = {};
+    logs.forEach(l => {
+      if (!ipMap[l.ident]) ipMap[l.ident] = new Set();
+      ipMap[l.ident].add(l.ip);
+    });
+
+    const items = reversed.map(l => {
+      const multi = ipMap[l.ident] && ipMap[l.ident].size > 1;
+      return `
+        <div class="ip-entry ${multi?'multi':''}">
+          <div>
+            <div class="ip-user">${l.ident}</div>
+            <div class="ip-addr">${l.ip}</div>
+            <div class="ip-time">${l.time}</div>
+          </div>
+          ${multi ? '<div class="badge warn">⚠ MULTI-IP</div>' : '<div class="badge ok">✓ OK</div>'}
+        </div>`;
+    }).join('');
+
+    const alertCount = Object.values(ipMap).filter(s=>s.size>1).length;
+
+    return `
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px">
+        <div class="panel-title" style="margin:0">Journal des connexions</div>
+        ${alertCount>0
+          ? `<div class="badge warn">⚠ ${alertCount} compte${alertCount>1?'s':''} multi-IP détecté${alertCount>1?'s':''}</div>`
+          : '<div class="badge ok">✓ Aucune anomalie</div>'}
+      </div>
+      <div style="display:flex;justify-content:flex-end;margin-bottom:10px">
+        <button class="btn-del" style="font-size:12px;padding:4px 12px;border:1px solid var(--border)" onclick="clearLogs()">Effacer les logs</button>
+      </div>
+      <div class="scroll-list" style="max-height:300px">${items}</div>`;
+  }
+
+  function clearLogs() {
+    if (!confirm('Effacer tous les logs ?')) return;
+    logs = [];
+    localStorage.setItem('rs_logs', JSON.stringify(logs));
     renderAdminHTML();
   }
 
   // ─── STATS ───
   function updateStats() {
-    const avail = keys.filter(k => k.status==='available').length;
-    const used  = keys.filter(k => k.status==='used').length;
+    const avail = keys.filter(k=>k.status==='available').length;
+    const used  = keys.filter(k=>k.status==='used').length;
     document.getElementById('statTotal').textContent = keys.length;
     document.getElementById('statAvail').textContent = avail;
     document.getElementById('statUsed').textContent  = used;
@@ -500,64 +531,50 @@
 
   // ─── GENERATE ───
   function generateKey() {
-    const avail = keys.filter(k => k.status==='available');
+    const avail   = keys.filter(k=>k.status==='available');
     const out     = document.getElementById('keyOutput');
     const ph      = document.getElementById('keyPlaceholder');
     const copyBtn = document.getElementById('copyBtn');
     const genBtn  = document.getElementById('generateBtn');
-
     if (!avail.length) {
-      out.style.display = 'none';
-      ph.style.display = 'block';
-      ph.textContent = '⚠ Aucune clé disponible pour le moment.';
-      ph.style.color = '#f55';
-      copyBtn.style.display = 'none';
-      return;
+      out.style.display='none'; ph.style.display='block';
+      ph.textContent='⚠ Aucune clé disponible pour le moment.'; ph.style.color='#f55';
+      copyBtn.style.display='none'; return;
     }
-
-    genBtn.disabled = true; genBtn.textContent = '...';
-    copyBtn.style.display = 'none';
-    out.style.display = 'none';
-    ph.style.display = 'block';
-    ph.textContent = 'Génération en cours...'; ph.style.color = '';
-
-    setTimeout(() => {
-      const idx = Math.floor(Math.random() * avail.length);
-      const chosen = avail[idx];
-      keys[keys.indexOf(chosen)].status = 'used';
-      localStorage.setItem('rs_keys', JSON.stringify(keys));
+    genBtn.disabled=true; genBtn.textContent='...';
+    copyBtn.style.display='none'; out.style.display='none';
+    ph.style.display='block'; ph.textContent='Génération en cours...'; ph.style.color='';
+    setTimeout(()=>{
+      const idx=Math.floor(Math.random()*avail.length);
+      const chosen=avail[idx];
+      keys[keys.indexOf(chosen)].status='used';
+      localStorage.setItem('rs_keys',JSON.stringify(keys));
       updateStats();
-      if (currentRole === 'admin') renderAdminHTML();
-
-      out.textContent = chosen.code;
-      out.style.display = 'block';
-      ph.style.display = 'none';
-      copyBtn.style.display = 'block';
-      out.style.animation = 'none'; out.offsetHeight;
-      out.style.animation = 'key-reveal .4s ease';
-      genBtn.disabled = false;
-      genBtn.textContent = '▶ GÉNÉRER UNE CLÉ';
-    }, 700);
+      if(currentRole==='admin') renderAdminHTML();
+      out.textContent=chosen.code; out.style.display='block'; ph.style.display='none';
+      copyBtn.style.display='block';
+      out.style.animation='none'; out.offsetHeight; out.style.animation='key-reveal .4s ease';
+      genBtn.disabled=false; genBtn.textContent='▶ GÉNÉRER UNE CLÉ';
+    },700);
   }
 
   function resetKeyDisplay() {
-    document.getElementById('keyOutput').style.display = 'none';
-    const ph = document.getElementById('keyPlaceholder');
-    ph.style.display = 'block'; ph.textContent = '─ Aucune clé générée ─'; ph.style.color = '';
-    document.getElementById('copyBtn').style.display = 'none';
+    document.getElementById('keyOutput').style.display='none';
+    const ph=document.getElementById('keyPlaceholder');
+    ph.style.display='block'; ph.textContent='─ Aucune clé générée ─'; ph.style.color='';
+    document.getElementById('copyBtn').style.display='none';
   }
 
   function copyKey() {
-    const val = document.getElementById('keyOutput').textContent;
-    if (!val) return;
+    const val=document.getElementById('keyOutput').textContent;
+    if(!val) return;
     navigator.clipboard.writeText(val).catch(()=>{});
-    const t = document.getElementById('toast');
-    t.classList.add('show'); setTimeout(()=>t.classList.remove('show'), 2000);
+    const t=document.getElementById('toast');
+    t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2000);
   }
 
-  // extra animations
-  const s = document.createElement('style');
-  s.textContent = `
+  const s=document.createElement('style');
+  s.textContent=`
     @keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-6px)}80%{transform:translateX(6px)}}
     @keyframes key-reveal{from{opacity:0;transform:scale(.9);filter:blur(4px)}to{opacity:1;transform:scale(1);filter:blur(0)}}
   `;
